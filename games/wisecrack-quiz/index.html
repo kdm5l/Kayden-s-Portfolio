@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisecrack Quiz</title>
+    <meta name="color-scheme" content="only light">
+    <style>:root{color-scheme:only light}</style>
+    <link rel="stylesheet" href="style.css">
+    <body>
+    <div class="container">
+        <div class="header">
+            <h1> 😅 Wisecrack Quiz🧠</h1>
+            <p>Test your wits peasant!</p>
+        </div>
+        
+        
+        <div id="start-screen" class="screen active">
+            <div class="input-group">
+                <label for="player-name">Enter your name:</label>
+                <input type="text" id="player-name" placeholder="Your name">
+                <div class="error-message" id="name-error">Please enter your name to continue</div>
+            </div>
+            
+            <div class="actions">
+                <button id="start-btn" class="btn">Start Quiz</button>
+            </div>
+        </div>
+        
+        
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="question-count">Question <span id="current-question">1</span>/<span id="total-questions">10</span></div>
+                <div class="score-display">Score: <span id="current-score">0</span></div>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress" id="quiz-progress"></div>
+            </div>
+            
+            <div class="question-text" id="question-text">Question goes here</div>
+            
+            <div class="hint-section">
+                <button id="hint-btn" class="btn btn-hint">💡 Need a Hint? (Click me!)</button>
+                <div class="hint-text" id="hint-text">Hint will appear here</div>
+            </div>
+            
+            <div class="quiz-options" id="options-container">
+                
+            </div>
+            
+            <div class="control-panel">
+                <button id="skip-btn" class="btn btn-secondary">Skip Question</button>
+                <div class="timer">
+                    <span class="timer-icon">⏱️</span>
+                    <span id="timer-display">30</span>s
+                </div>
+            </div>
+        </div>
+        
+        
+        <div id="results-screen" class="screen">
+            <h2 class="results-title">Quiz Complete!</h2>
+            
+            <div class="results-score">
+                <span id="final-score">0</span>/<span id="max-score">10</span>
+            </div>
+            
+            <div class="results-message" id="results-message">
+                Great job completing the quiz!
+            </div>
+            
+            <div class="actions">
+                <button id="restart-btn" class="btn">Try Again</button>
+                <button id="home-btn" class="btn btn-secondary">Home</button>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
+    <script src="myscript.js"></script>
+<!-- Added for the portfolio: tells the portfolio someone is playing, so the 30-second idle return doesn't interrupt the game -->
+<script>(function(){var t=0;['mousemove','mousedown','keydown','touchstart','click'].forEach(function(e){addEventListener(e,function(){var n=Date.now();if(n-t>1000){t=n;try{parent.postMessage('kmp','*')}catch(x){}}},{passive:true})})})();</script>
